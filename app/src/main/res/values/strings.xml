@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">G7 Package Manager</string>
+    <string name="welcome">Bienvenido a</string>
+    <string name="log_in">Iniciar Sesión</string>
+    <string name="add_package_title">Añadir Paquete</string>
+    <string name="add_package_id">ID del paquete</string>
+    <string name="add_package_date">Fecha de entrega (dd/mm/yyyy)</string>
+    <string name="add_package_content">Contenido</string>
+    <string name="add_package_description">Descripción</string>
+    <string name="add_package_register">Registrar paquete</string>
+    <string name="warehouse_name">Almacén</string>
+    <string name="start_screen">Iniciar Sesión</string>
+    <string name="login_title">Inicio de sesión</string>
+    <string name="login_user">Usuario</string>
+    <string name="login_password">Contraseña</string>
+    <string name="view_package_delivery_date">Fecha de entrega</string>
+    <string name="view_package_registration_date">Fecha de registro</string>
+    <string name="add_user_title">Añadir usuario</string>
+    <string name="add_user_name">Nombre</string>
+    <string name="add_user_password">Contraseña</string>
+    <string name="add_user_store">Almacén</string>
+    <string name="check_user_admin">Admin</string>
+    <string name="add_user_register">Registrar usuario</string>
+    <string name="admin_store_menu">Almacenes</string>
+    <string name="admin_user_menu">Añadir usuario</string>
+    <string name="admin_menu_title">Menú de administrador</string>
+    <string name="add_storehouse_title">Añadir Almacén</string>
+    <string name="add_storehouse_name">Nombre</string>
+    <string name="add_storehouse_description">Descripción</string>
+    <string name="add_storehouse_address">Dirección</string>
+    <string name="add_storehouse">Registrar almacén</string>
+    <string name="storehouses">Almacenes</string>
+</resources>
