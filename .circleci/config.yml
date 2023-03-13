@@ -6,24 +6,30 @@ version: 2.1
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  test-deploy:
+  build-all:
     jobs:
-      - test
+      - build-android
+      - build-ios
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+orbs:
+  android: circleci/android@1.0.3
+
 jobs:
-  test:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+  build-android:
+    executor: android/android
+
     steps:
       - checkout
+      - android/restore-build-cache
+      - android/restore-gradle-cache
       - run:
-          name: "Install dependencies"
-          command: "npm install"
+          name: Run Android tests
+          command: ./gradlew androidApp:testDebugUnitTest
+      - android/save-gradle-cache
+      - android/save-build-cache
 
+      - store_artifacts:
+          path: androidApp/build/outputs/apk/debug
 
