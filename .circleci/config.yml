@@ -25,7 +25,7 @@ jobs:
       - run:
           name: Run Android tests
           command: |
-        sudo chmod +x ./gradlew
+         chmod +x ./gradlew
         ./gradlew androidApp:testDebugUnitTest
       - android/save-gradle-cache
       - android/save-build-cache
