@@ -34,7 +34,7 @@ class AddUser : AppCompatActivity() {
             val storeField : EditText = findViewById(R.id.et_add_user_store)
             try {
                 val store = storeField.text.toString().toInt()
-                val result = UserService.saveUser(username,pass,adminField.isChecked,store)
+                UserService.saveUser(username,pass,adminField.isChecked,store)
             }
             catch(nfe: NumberFormatException){
                 val intent: Intent = Intent(this, AddUser:: class.java)

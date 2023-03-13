@@ -14,7 +14,7 @@ class AdminMenu : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val loggedUser = UserService.getLoggedUser()
+        UserService.getLoggedUser()
         setContentView(R.layout.admin_menu)
 
         val btn: ImageView = findViewById(R.id.back_button)

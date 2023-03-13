@@ -22,7 +22,8 @@ class StorehouseMenu : AppCompatActivity() {
 
         val btn: ImageView = findViewById(R.id.home_button)
         btn.setOnClickListener {
-            triggerRebirth(this)
+            val intent: Intent = Intent(this, AdminMenu:: class.java)
+            startActivity(intent)
         }
 
         val btn2: ImageView = findViewById(R.id.add_storehouse_button)

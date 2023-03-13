@@ -38,7 +38,7 @@ class AddStorehouse : AppCompatActivity() {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Fallo al añadir un nuevo almacén")
                 builder.setMessage("Algún campo del formulario está vacío. Complételo y añada de nuevo el almacén")
-                builder.setPositiveButton(android.R.string.yes) {dialog, which ->
+                builder.setPositiveButton(android.R.string.yes) {_, _ ->
                     Toast.makeText(applicationContext,
                         android.R.string.yes, Toast.LENGTH_SHORT).show()
                 }

@@ -56,7 +56,7 @@ class AddPackage : AppCompatActivity() {
 
                 builder.setTitle("Fallo al añadir un nuevo paquete")
                 builder.setMessage(messageWarning)
-                builder.setPositiveButton(android.R.string.yes) {dialog, which ->
+                builder.setPositiveButton(android.R.string.yes) {_, _ ->
                     Toast.makeText(applicationContext,
                         android.R.string.yes, Toast.LENGTH_SHORT).show()
                 }
