@@ -6,7 +6,11 @@ version: 2.1
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  build-all:
+  run-android:
+    when:
+      or:
+        - << pipeline.parameters.build-android >>
+        - << pipeline.parameters.build-all >>
     jobs:
       - build-android
 # Define a job to be invoked later in a workflow.
@@ -24,9 +28,7 @@ jobs:
       - android/restore-gradle-cache
       - run:
           name: Run Android tests
-          command: |
-         chmod +x ./gradlew
-        ./gradlew androidApp:testDebugUnitTest
+          command: ./gradlew androidApp:testDebugUnitTest
       - android/save-gradle-cache
       - android/save-build-cache
 
