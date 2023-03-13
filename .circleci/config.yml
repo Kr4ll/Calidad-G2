@@ -24,7 +24,9 @@ jobs:
       - android/restore-gradle-cache
       - run:
           name: Run Android tests
-          command: ./gradlew androidApp:testDebugUnitTest
+          command: |
+        sudo chmod +x ./gradlew
+        ./gradlew androidApp:testDebugUnitTest
       - android/save-gradle-cache
       - android/save-build-cache
 
