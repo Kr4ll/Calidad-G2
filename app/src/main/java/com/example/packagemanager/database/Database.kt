@@ -1,6 +1,5 @@
 package com.example.packagemanager.database
 
-import com.example.packagemanager.database.AbstractDatabase
 import com.example.packagemanager.model.MyPackage
 import com.example.packagemanager.model.Storehouse
 import com.example.packagemanager.model.User
