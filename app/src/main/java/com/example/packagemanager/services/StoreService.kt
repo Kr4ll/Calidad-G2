@@ -18,4 +18,12 @@ object StoreService {
     fun findAllStorehouses(): List<Storehouse> {
         return DataBase.findAllStorehouses()
     }
+
+    fun findStorehouseById(id: Int): Storehouse? {
+        return DataBase.findStorehouseById(id)
+    }
+
+    fun deleteStorehouseById(id: Int): Boolean {
+        return DataBase.deleteStorehouseById(id)
+    }
 }

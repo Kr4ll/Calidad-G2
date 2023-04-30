@@ -18,6 +18,29 @@ object DataBase: AbstractDatabase() {
         return storehouseList
     }
 
+    fun findStorehouseById(id: Int): Storehouse? {
+        for (storehouse in storehouseList) {
+            if (storehouse.id == id)
+                return storehouse
+        }
+        return null
+    }
+
+    fun deleteStorehouseById(id: Int): Boolean {
+        var deleted = false
+
+        for (storehouse in storehouseList) {
+            if (storehouse.id == id) {
+                for (ePackage in findPackagesByStorehouseId(id))
+                    deletePackageById(ePackage.dbId)
+                storehouseList.remove(storehouse)
+                deleted = true
+                break
+            }
+        }
+        return deleted
+    }
+
     override fun saveUser(user: User) {
         userList.add(user)
     }
